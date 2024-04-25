@@ -19,7 +19,8 @@ let cell = e.target;
 let cellNumber = cell.getAttribute("data-cell");
 console.log(cellNumber);
 console.log(e.target); 
-if (turn == false){
+if (turn == false && cell.getAttribute("data") != 1){
+    cell.setAttribute("data", "1");
     cell.textContent = "X";
     arr[cellNumber] = "X";
     notifyTurn.textContent = "O Turn";
@@ -33,7 +34,8 @@ if (turn == false){
 
     }
 }
-else {
+else if(cell.getAttribute("data") != 1) {
+    cell.setAttribute("data", "1");
     cell.textContent = "O";
     arr[cellNumber] = "O";
     notifyTurn.textContent = "X Turn"

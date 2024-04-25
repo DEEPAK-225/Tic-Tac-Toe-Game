@@ -29,8 +29,8 @@ body{
     transform: translate(-50%, -50%);
     z-index: -1;
 }
-.container{
-    /* margin: auto; */
+.main-container{
+    margin: auto;
     width: fit-content;
     height: fit-content;
     padding: 2vh;
@@ -51,6 +51,8 @@ body{
     /* display: flex;
     flex-wrap: wrap;
     justify-content: space-around; */
+    z-index: -2;
+    display: none;
 }
 .game-elements{
     height: 30%;
@@ -59,6 +61,7 @@ body{
     /* margin: auto; */
     padding: auto;
     font-size: 10vh;
+    /* z-index: 10; */
 }
 .btn-color{
     color:white;
