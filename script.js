@@ -68,102 +68,50 @@ function resultPopup(char){
         scoreBoard.style.zIndex = '10';
         notifyTurn.textContent = "";
 }
+function changeStyle(a,b, c){
+    console.log(a+b+c);
+    document.getElementById(`cell${a}`).classList.add("winned-cell");
+    document.getElementById(`cell${b}`).classList.add("winned-cell");
+    document.getElementById(`cell${c}`).classList.add("winned-cell");
+}
+
 function WinningConditions(char){
     // console.log(char);
     
     if(arr[1]==char && arr[2]==char && arr[3]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell1").classList.add("winned-cell");
-        document.getElementById("cell2").classList.add("winned-cell");
-        document.getElementById("cell3").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(1,2,3);
         return true;
         
     }
     else if(arr[4]==char && arr[5]==char && arr[6]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell4").classList.add("winned-cell");
-        document.getElementById("cell5").classList.add("winned-cell");
-        document.getElementById("cell6").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(4,5,6);
         return true;
     }
     else if(arr[7]==char && arr[8]==char && arr[9]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell7").classList.add("winned-cell");
-        document.getElementById("cell8").classList.add("winned-cell");
-        document.getElementById("cell9").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(7,8,9);
         return true;
     }
     else if(arr[1]==char && arr[4]==char && arr[7]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell1").classList.add("winned-cell");
-        document.getElementById("cell4").classList.add("winned-cell");
-        document.getElementById("cell7").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(1,4,7);
         return true;
     }
     else if(arr[2]==char && arr[5]==char && arr[8]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell2").classList.add("winned-cell");
-        document.getElementById("cell5").classList.add("winned-cell");
-        document.getElementById("cell8").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(2,5,8);
         return true;
     }
     else if(arr[3]==char && arr[6]==char && arr[9]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell3").classList.add("winned-cell");
-        document.getElementById("cell6").classList.add("winned-cell");
-        document.getElementById("cell9").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(3,6,9);
         return true;
     }
     else if(arr[1]==char && arr[5]==char && arr[9]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell1").classList.add("winned-cell");
-        document.getElementById("cell5").classList.add("winned-cell");
-        document.getElementById("cell9").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(1,5,9);
         return true;
 
     }
     else if(arr[3]==char && arr[5]==char && arr[7]==char){
-        // gameStatus.textContent = "Game Over";
-        // winner.textContent = `${char}-Win`; 
-        // scoreBoard.style.zIndex = '10';
-        document.getElementById("cell3").classList.add("winned-cell");
-        document.getElementById("cell5").classList.add("winned-cell");
-        document.getElementById("cell7").classList.add("winned-cell");
-        // gameBody.removeEventListener("click", f);
-        // notifyTurn.textContent = "";
+        changeStyle(3,5,7);
         return true;
     }
-
-}
-
-
     
+}    
 });
