@@ -17,8 +17,8 @@ let arr = Array(9).fill(undefined);
 gameBody.addEventListener("click", (e)=>{
 let cell = e.target;
 let cellNumber = cell.getAttribute("data-cell");
-console.log(cellNumber);
-console.log(e.target); 
+// console.log(cellNumber);
+console.log(arr[1]); 
 if (turn == false && cell.getAttribute("data") != 1){
     cell.setAttribute("data", "1");
     cell.textContent = "X";
@@ -43,50 +43,76 @@ else if(cell.getAttribute("data") != 1) {
     turn = false;
     count ++;
 }
-console.log(arr);
-console.log(count);
+// console.log(arr);
+// console.log(count);
 });
 function WinningConditions(char){
-    console.log(char);
+    // console.log(char);
     if(arr[1]==char && arr[2]==char && arr[3]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell1").classList.add("winned-cell");
+        document.getElementById("cell2").classList.add("winned-cell");
+        document.getElementById("cell3").classList.add("winned-cell");
+
+        
     }
     if(arr[4]==char && arr[5]==char && arr[6]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell4").classList.add("winned-cell");
+        document.getElementById("cell5").classList.add("winned-cell");
+        document.getElementById("cell6").classList.add("winned-cell");
     }
     if(arr[7]==char && arr[8]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell7").classList.add("winned-cell");
+        document.getElementById("cell8").classList.add("winned-cell");
+        document.getElementById("cell9").classList.add("winned-cell");
     }
     if(arr[1]==char && arr[4]==char && arr[7]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell1").classList.add("winned-cell");
+        document.getElementById("cell4").classList.add("winned-cell");
+        document.getElementById("cell7").classList.add("winned-cell");
     }
     if(arr[2]==char && arr[5]==char && arr[8]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell2").classList.add("winned-cell");
+        document.getElementById("cell5").classList.add("winned-cell");
+        document.getElementById("cell8").classList.add("winned-cell");
     }
     if(arr[3]==char && arr[6]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell3").classList.add("winned-cell");
+        document.getElementById("cell6").classList.add("winned-cell");
+        document.getElementById("cell9").classList.add("winned-cell");
     }
     if(arr[1]==char && arr[5]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell1").classList.add("winned-cell");
+        document.getElementById("cell5").classList.add("winned-cell");
+        document.getElementById("cell9").classList.add("winned-cell");
     }
     if(arr[3]==char && arr[5]==char && arr[7]==char){
         gameStatus.textContent = "Game Over";
         winner.textContent = `${char}-Win`; 
         scoreBoard.style.zIndex = '10';
+        document.getElementById("cell3").classList.add("winned-cell");
+        document.getElementById("cell5").classList.add("winned-cell");
+        document.getElementById("cell7").classList.add("winned-cell");
     }
 
 }
