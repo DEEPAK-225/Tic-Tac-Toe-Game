@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-const gameBody = document._("gameBody");
+const gameBody = document.getElementById("gameBody");
 const scoreBoard = document.getElementById("scoreBoard");
 const gameStatus = document.getElementById("gameStatus");
 const winner = document.getElementById("Winner");
