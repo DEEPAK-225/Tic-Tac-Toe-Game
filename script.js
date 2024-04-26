@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-const gameBody = document.getElementById("gameBody");
+const gameBody = document._("gameBody");
 const scoreBoard = document.getElementById("scoreBoard");
 const gameStatus = document.getElementById("gameStatus");
 const winner = document.getElementById("Winner");
@@ -14,7 +14,7 @@ playAgainBtn.addEventListener("click", ()=>{
 
 let turn = false , count = 0 ;
 let arr = Array(9).fill(undefined);
-gameBody.addEventListener("click", (e)=>{
+gameBody.addEventListener("click", f=(e)=>{
 let cell = e.target;
 let cellNumber = cell.getAttribute("data-cell");
 // console.log(cellNumber);
@@ -55,7 +55,8 @@ function WinningConditions(char){
         document.getElementById("cell1").classList.add("winned-cell");
         document.getElementById("cell2").classList.add("winned-cell");
         document.getElementById("cell3").classList.add("winned-cell");
-
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
         
     }
     if(arr[4]==char && arr[5]==char && arr[6]==char){
@@ -65,6 +66,8 @@ function WinningConditions(char){
         document.getElementById("cell4").classList.add("winned-cell");
         document.getElementById("cell5").classList.add("winned-cell");
         document.getElementById("cell6").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[7]==char && arr[8]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
@@ -73,6 +76,8 @@ function WinningConditions(char){
         document.getElementById("cell7").classList.add("winned-cell");
         document.getElementById("cell8").classList.add("winned-cell");
         document.getElementById("cell9").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[1]==char && arr[4]==char && arr[7]==char){
         gameStatus.textContent = "Game Over";
@@ -81,6 +86,8 @@ function WinningConditions(char){
         document.getElementById("cell1").classList.add("winned-cell");
         document.getElementById("cell4").classList.add("winned-cell");
         document.getElementById("cell7").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[2]==char && arr[5]==char && arr[8]==char){
         gameStatus.textContent = "Game Over";
@@ -89,6 +96,8 @@ function WinningConditions(char){
         document.getElementById("cell2").classList.add("winned-cell");
         document.getElementById("cell5").classList.add("winned-cell");
         document.getElementById("cell8").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[3]==char && arr[6]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
@@ -97,6 +106,8 @@ function WinningConditions(char){
         document.getElementById("cell3").classList.add("winned-cell");
         document.getElementById("cell6").classList.add("winned-cell");
         document.getElementById("cell9").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[1]==char && arr[5]==char && arr[9]==char){
         gameStatus.textContent = "Game Over";
@@ -105,6 +116,8 @@ function WinningConditions(char){
         document.getElementById("cell1").classList.add("winned-cell");
         document.getElementById("cell5").classList.add("winned-cell");
         document.getElementById("cell9").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
     if(arr[3]==char && arr[5]==char && arr[7]==char){
         gameStatus.textContent = "Game Over";
@@ -113,6 +126,8 @@ function WinningConditions(char){
         document.getElementById("cell3").classList.add("winned-cell");
         document.getElementById("cell5").classList.add("winned-cell");
         document.getElementById("cell7").classList.add("winned-cell");
+        gameBody.removeEventListener("click", f);
+        notifyTurn.textContent = "";
     }
 
 }
